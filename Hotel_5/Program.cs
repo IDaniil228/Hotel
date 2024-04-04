@@ -1,7 +1,4 @@
-using Hotel;
-using Hotel_2;
-
-namespace Hotel_2
+namespace Hotel_5
 {
     internal static class Program
     {

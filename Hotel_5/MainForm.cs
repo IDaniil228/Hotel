@@ -12,17 +12,30 @@ namespace Hotel_5
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Загрузка формы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
             timer.Start();
             TimeLabel.Text = DateTime.Now.ToLongTimeString();
         }
-
+        /// <summary>
+        /// Обновление времени
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             TimeLabel.Text = DateTime.Now.ToLongTimeString();
         }
-
+        /// <summary>
+        /// Добавление элементов в DataGridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ReservedRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -46,7 +59,11 @@ namespace Hotel_5
             }
 
         }
-
+        /// <summary>
+        /// Добавление элементов в DataGridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FreeRadioButton4_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -71,7 +88,11 @@ namespace Hotel_5
 
 
         }
-
+        /// <summary>
+        /// Добавление элементов в DataGridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OccupiedRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -95,7 +116,11 @@ namespace Hotel_5
             }
 
         }
-
+        /// <summary>
+        /// Добавление элементов в DataGridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DischargedRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -119,7 +144,11 @@ namespace Hotel_5
             }
 
         }
-
+        /// <summary>
+        /// Вывод информации в боковую панель при нажатии на строку
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listOfGuestsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (FreeRadioButton.Checked)
@@ -158,7 +187,11 @@ namespace Hotel_5
                 DepartureDateLable.Text = CurrentData.CurrentRoom.DepartureDate;
             }
         }
-
+        /// <summary>
+        /// Открытие карты гостя
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCheckCard_Click(object sender, EventArgs e)
         {
 
@@ -170,7 +203,11 @@ namespace Hotel_5
             logger.Info("Открыта карточка с информацией о пользователе");
             form.ShowDialog();
         }
-
+        /// <summary>
+        /// Поиск элементов в таблице по тексту в поисковой строке
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
             rows.Clear();
@@ -213,7 +250,11 @@ namespace Hotel_5
                 listOfGuestsDataGridView.Rows.Add(row);
             }
         }
-
+        /// <summary>
+        /// сброс текста в поисковой строке при нажатии 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SearchTextBox_Click(object sender, EventArgs e)
         {
             if (SearchTextBox.Text == "Поиск по номеру комнаты")
